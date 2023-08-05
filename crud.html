@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Project Gallery</title>
+  <style>
+    header {
+        background-color: #d3d3d3;
+    }
+    header a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        padding: 0.5rem 1rem;
+    }
+    header ul {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0;
+    }
+    header li {
+        list-style: none;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem 0;
+        background-color: #e7e5e5;
+        border-radius: 5px;
+    }
+    header li:hover {
+        background-color: #c4c2c2;
+    }
+    h1 {
+        margin-top: 5rem;
+    }
+    #form-info {
+        display: flex;
+        flex-direction: column;
+    }
+    </style>
+    <script src="crud.js" type="module"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="crud.html">CRUD</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>CRUD FORM</h1>
+    <p>Perform CRUD Actions with local storage using the following form:</p>
+    <form>
+        <fieldset>
+            <legend>CRUD Action</legend>
+            <label for="CRUDAction">Action</label>
+            <select name="CRUDAction" id="CRUDAction">
+                <option value="create">Create</option>
+                <option value="read">Read</option>
+                <option value="update">Update</option>
+                <option value="delete">Delete</option>
+            </select>
+        </fieldset>
+
+        <fieldset id="form-info">
+            <legend>Data</legend>
+            <label for="key">Key: </label>
+            <input type="text" id="key" name="key" required>
+            <label for="value">Value:</label>
+            <textarea name="value" id="value" rows="10" required></textarea>
+        </fieldset>
+        <button type="submit">Submit</button>
+    </form>
+    <output></output>
+</body>
+
+</html>

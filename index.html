@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Project Gallery</title>
+  <!--
+      Add CSS as you like linked or otherwise, but encapsulate most within the card components.  
+
+      You should also include the script code separately.  You may wish to have individual files 
+      for the customElement vs the page layout and CRUD actions if you do them. Regardless of 
+      what you do you use ES modules and vanilla JS.
+    -->
+    <style>
+      :root {
+        --card-color: #d3d3d3;
+        --card-border-radius: 5px;
+        --card-max-width: 200px;
+        --card-link-color: #0047AB;
+        --card-link-background-color: #FFFFFF;
+        --card-link-border: 1px solid black;
+        --card-link-hover-box-shadow: 10px 5px 5px grey;
+      }
+      header {
+        background-color: #d3d3d3;
+      }
+      header a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        padding: 0.5rem 1rem;
+      }
+      header ul {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0;
+      }
+      header li {
+        list-style: none;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem 0;
+        background-color: #e7e5e5;
+        border-radius: 5px;
+      }
+      header li:hover {
+        background-color: #c4c2c2;
+      }
+      output {
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+    </style>
+    <script src="script.js" type="module"></script>
+</head>
+
+<body>
+  <!--
+      This page will contain a list of cards which will contain cards that overview each project in 
+      your portfolio. You will dynamically create these cards as CustomElements using JavaScript 
+      and populate them from localStorage and from a JSON file fetched remotely from a server using 
+      Ajax or fetch.
+
+      You should create a CustomElement called <project-card> which will contain at least the 
+      following elements:
+
+        - <h2>Project Name</h2>
+        - <img src="image.jpg" alt="Project Image">
+        - <p>Project Description</p>
+        - <a href="URL">Read More</a>
+    -->
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="crud.html">CRUD</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h1>Dynamically Generated Project Card Web Components</h1>
+    <p>Click either button below to load project cards from their respective sources</p>
+    <button id="loadLocal" type="submit">Load Local</button>
+    <button id="loadRemote" type="submit">Load Remote</button>
+    <output></output>
+    <!--
+        You can have more things if you like such as date, keywords or tags, author, etc.
+
+      Make two buttons "Load Local" and "Load Remote" in both cases you will fetch and array of JSON 
+      data to populate your cards. The difference is that the "Load Local" button will fetch from 
+      localStorage and the "Load Remote" button will fetch from a remote server. 
+
+      - You should use CSS variables to style your cards.
+      - You should use CSS grid or flexbox to layout your cards.
+      - You should use the CustomElements API to create your custom elements.
+      - You should use either JSONBin API or My JSON Server to store your data in the cloud.
+      - You should use the localStorage API to store your data locally.
+      - You should use the fetch or XMLHttpRequest API to fetch data from a server.
+      
+      - You can use any random data you like and images you like for the cards, but eventually you 
+      may want to change it.
+      - You can use the Unsplash API to get random images for your cards. 
+      - You can use the JSONPlaceholder API to get random data for your cards. 
+      - You can use the DOM API to add your custom elements to the DOM. 
+
+      You should be able to do this for some canned set of data you store in localStorage 
+      and the cloud.
+
+      For extra credit (10%) you can create a second page crud.html which has a form that allows you 
+      to perform CRUD actions (create, add, update, delete) on the data in either the localStorage or 
+      cloud based storage. You may roll this code yourself or use something like ZingGrid or any 
+      other simple custom element you can find for your fake backend.
+
+      In all cases except the following section you may not use any libraries or frameworks. You 
+      must use the native APIs and vanilla JavaScript. This includes Lit and jQuery as well as any 
+      other library or framework.
+
+      Advanced students with existing framework knowledge may wish to perform this activity again 
+      with a framework or library of their choice for further extra credit. If you do this, you 
+      must still do the vanilla JavaScript version first and then do the framework version as 
+      further extra credit (5% more). You must however do the first extra credit before you attempt 
+      the second.  We will not accept second extra credits without the first. The second extra credit 
+      requires a README.md with an analysis of the performance and lines of code impact of using the 
+      framework or library. If you perform the 2nd extra credit you must be cautious to provide a 
+      fully working example that does not require complex set-up for the grader. You should either 
+      use a local file, CDN or other simple method to load the framework or library. You should not 
+      require the grader to install anything or run any build scripts.
+    -->
+</body>
+
+</html>
